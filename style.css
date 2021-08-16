@@ -1,0 +1,259 @@
+/* body */
+*,
+body {
+  font-family: monospace;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+body {
+  background-color: #eee;
+}
+/* navigation */
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #1d6b80;
+  height: 4rem;
+  z-index: 1000;
+}
+nav .logo {
+  display: inline-block;
+  line-height: 4rem;
+  margin-left: 2rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+nav .nav-link {
+  float: right;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+nav .nav-link ul li {
+  display: inline-block;
+  line-height: 4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  text-transform: uppercase;
+}
+nav .nav-link ul li a {
+  padding: 7px 13px;
+  border-radius: 3px;
+}
+nav .nav-link ul li a:hover,
+nav .nav-link ul li a.active {
+  background-color: #2273ab;
+  transition: 0.5s;
+}
+
+nav .toggle-menu {
+  width: 3rem;
+  height: 3rem;
+  display: none;
+  float: right;
+  margin-right: 2rem;
+  margin-top: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+nav .toggle-menu div {
+  width: 80%;
+  height: 0.3rem;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  position: relative;
+  transition: 0.5s;
+}
+
+nav .toggle-menu div::before,
+nav .toggle-menu div::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  border-radius: 0.2rem;
+  background-color: #fff;
+  transition: 0.5s;
+}
+nav .toggle-menu div::before {
+  transform: translateY(-0.7rem);
+}
+nav .toggle-menu div::after {
+  transform: translateY(0.7rem);
+}
+
+#check {
+  z-index: 9000;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  right: 2rem;
+  top: 0.5rem;
+  opacity: 0;
+  cursor: pointer;
+  display: none;
+}
+
+#check:checked ~ .toggle-menu div {
+  background-color: transparent;
+}
+#check:checked ~ .toggle-menu div::before {
+  transform: rotate(45deg);
+}
+#check:checked ~ .toggle-menu div::after {
+  transform: rotate(-45deg);
+}
+
+/* banner */
+.banner {
+  position: relative;
+  background-image: url("./image/header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 4rem);
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #1d6b80;
+  opacity: 0.5;
+}
+.banner .caption {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  text-shadow: 5px 5px 5px black;
+  text-align: center;
+}
+h1:first-child {
+  font-style: italic;
+  margin-bottom: 2rem;
+  position: relative;
+}
+h1:last-child {
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 0.5rem;
+}
+
+.content {
+  /* height: 100vh; */
+  width: 100%;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.content h2 {
+  color: #1d6b80;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  border-bottom: 2px solid teal;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.meal-hot > div {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -10rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: contain;
+  height: 45rem;
+  /* border: 5px solid #eee; */
+}
+.meal-hot div div {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 20px 40px;
+  background-color: teal;
+  position: absolute;
+  top: 80%;
+  left: 70%;
+  font-size: 1.7rem;
+  font-weight: bold;
+  -webkit-box-shadow: 14px 14px 6px -9px rgba(0, 0, 0, 0.46);
+  -moz-box-shadow: 14px 14px 6px -9px rgba(0, 0, 0, 0.46);
+  box-shadow: 14px 14px 6px -9px rgba(0, 0, 0, 0.46);
+  transition: 0.5s;
+}
+.meal-hot div div:hover {
+  transform: scale(1.1);
+}
+
+.meal-fruit > div {
+  width: 60%;
+  height: 20rem;
+  background-color: #fff;
+  margin: auto;
+  border-radius: 15px;
+  position: relative;
+  -webkit-box-shadow: 6px 6px 36px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 6px 36px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 6px 36px -6px rgba(0, 0, 0, 0.75);
+  margin-bottom: 5rem;
+}
+
+.meal-fruit-img {
+  width: 40%;
+  height: 90%;
+  background-color: #1d6b80;
+  padding: 10px 10px;
+  border-radius: 20px;
+  position: absolute;
+  left: -7%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.9;
+}
+.meal-fruit-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+}
+.meal-fruit-info {
+  position: absolute;
+  left: 40%;
+  top: 20%;
+}
+.btn-readmore-mealfruit {
+  border-radius: 10px;
+  background-color: #1d6b80;
+  padding: 10px 20px;
+  width: 40%;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn-readmore-mealfruit p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.btn-readmore-mealfruit:hover {
+  background-color: #2273ab;
+}
+.meal-fruit h3 {
+  color: #1d6b80;
+  font-size: 1.5rem;
+}
